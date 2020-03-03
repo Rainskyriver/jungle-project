@@ -5,6 +5,11 @@
     <h1>My Cart</h1>
   </header>
 
+  <% if enhanced_cart.empty? %>
+    <div>Your cart is currently empty</div>
+    <%= link_to 'Home', :root %>
+  <% else %>
+
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -33,6 +38,7 @@
     </table>
   </div>
 
+
   <div class="row">
     <div class="col-xs-12">
       <%= form_tag orders_path do %>
@@ -49,5 +55,6 @@
       <% end %>
     </div>
   </div>
+  <% end %>
 
 </section>
